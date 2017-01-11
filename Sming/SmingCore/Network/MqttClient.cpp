@@ -88,7 +88,7 @@ bool MqttClient::connect(String clientName, String username, String password)
 	broker.send = staticSendPacket;
 
 	int res = mqtt_connect(&broker);
-	setTimeOut(USHRT_MAX);
+	setTimeOut(keepAlive);
 	return res > 0;
 }
 
